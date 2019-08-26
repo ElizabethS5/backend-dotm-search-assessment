@@ -33,8 +33,8 @@ def search_files(files, args):
         with zipfile.ZipFile(path_) as z:
             with z.open('word/document.xml', 'r') as doc:
                 for line in doc:
-                    # If using python 2 comment out next line
-                    line = str(line, "utf-8")
+                    line = line.decode('utf-8')
+                   # line = str(line, "utf-8")
                     if line.find(args.text) != -1:
                         index = line.find(args.text)
                         print("Match found in file " + path_)
