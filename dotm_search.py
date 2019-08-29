@@ -34,7 +34,7 @@ def search_files(files, args):
             with z.open('word/document.xml', 'r') as doc:
                 for line in doc:
                     line = line.decode('utf-8')
-                   # line = str(line, "utf-8")
+                    # line = str(line, "utf-8")
                     if line.find(args.text) != -1:
                         index = line.find(args.text)
                         print("Match found in file " + path_)
